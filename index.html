@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understand The Middle East</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="main-title">Understand The Middle East</h1>
+            <p class="subtitle">Explore the rich history, culture, and heritage of Middle Eastern nations</p>
+            <button class="back-btn" id="backBtn" style="display: none;">← Back to Countries</button>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content" id="mainContent">
+            <!-- Countries Gallery (Default View) -->
+            <div class="countries-gallery" id="countriesGallery">
+                <div class="countries-grid">
+                    <div class="country-card" data-country="palestine">
+                        <div class="card-background" style="background-image: url('./flags/palestine.png')"></div>
+                        <div class="card-overlay">
+                            <h3 class="country-name">Palestine</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="country-card" data-country="lebanon">
+                        <div class="card-background" style="background-image: url('./flags/lebanon.png')"></div>
+                        <div class="card-overlay">
+                            <h3 class="country-name">Lebanon</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="country-card" data-country="syria">
+                        <div class="card-background" style="background-image: url('./flags/syria.png')"></div>
+                        <div class="card-overlay">
+                            <h3 class="country-name">Syria</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="country-card" data-country="jordan">
+                        <div class="card-background" style="background-image: url('./flags/jordan.png')"></div>
+                        <div class="card-overlay">
+                            <h3 class="country-name">Jordan</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="country-card" data-country="iraq">
+                        <div class="card-background" style="background-image: url('./flags/iraq.png')"></div>
+                        <div class="card-overlay">
+                            <h3 class="country-name">Iraq</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="country-card" data-country="iran">
+                        <div class="card-background" style="background-image: url('./flags/iran.png')"></div>
+                        <div class="card-overlay">
+                            <h3 class="country-name">Iran</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="country-card" data-country="turkey">
+                        <div class="card-background" style="background-image: url('./flags/turkey.png')"></div>
+                        <div class="card-overlay">
+                            <h3 class="country-name">Turkey</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="country-card" data-country="saudi-arabia">
+                        <div class="card-background" style="background-image: url('./flags/saudi-arabia.png')"></div>
+                        <div class="card-overlay">
+                            <h3 class="country-name">Saudi Arabia</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="country-card" data-country="uae">
+                        <div class="card-background" style="background-image: url('./flags/uae.png')"></div>
+                        <div class="card-overlay">
+                            <h3 class="country-name">UAE</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="country-card" data-country="egypt">
+                        <div class="card-background" style="background-image: url('./flags/egypt.png')"></div>
+                        <div class="card-overlay">
+                            <h3 class="country-name">Egypt</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="country-card" data-country="qatar">
+                        <div class="card-background" style="background-image: url('./flags/qatar.png')"></div>
+                        <div class="card-overlay">
+                            <h3 class="country-name">Qatar</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="country-card" data-country="kuwait">
+                        <div class="card-background" style="background-image: url('./flags/kuwait.png')"></div>
+                        <div class="card-overlay">
+                            <h3 class="country-name">Kuwait</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Country Detail View (Hidden by default) -->
+            <div class="country-detail" id="countryDetail" style="display: none;">
+                <div class="detail-layout">
+                    <!-- Sidebar -->
+                    <aside class="sidebar">
+                        <nav class="sidebar-nav">
+                            <button class="nav-item active" data-section="overview">Overview</button>
+                            <button class="nav-item" data-section="history">History</button>
+                            <button class="nav-item" data-section="culture">Culture</button>
+                            <button class="nav-item" data-section="food">Food</button>
+                            <button class="nav-item" data-section="books">Books</button>
+                            <button class="nav-item" data-section="politics">Politics</button>
+                            <button class="nav-item" data-section="tourism">Touristic Sites</button>
+                            <button class="nav-item" data-section="extras">Extras</button>
+                        </nav>
+                    </aside>
+
+                    <!-- Content Area -->
+                    <div class="content-area">
+                        <div class="content-header">
+                            <h2 class="country-title" id="countryTitle">Country Name</h2>
+                            <div class="country-flag" id="countryFlag"></div>
+                        </div>
+                        <div class="content-body" id="contentBody">
+                            <!-- Dynamic content will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
