@@ -654,3 +654,47 @@ function addSearchFunctionality() {
 // addSearchFunctionality(); // Uncomment to enable search
 
 console.log("UnderstandTheMiddleEast website loaded successfully!")
+
+// Theme Toggle Functionality
+const themeToggle = document.getElementById("themeToggle")
+const toggleIcon = themeToggle.querySelector(".toggle-icon")
+
+// Check for saved theme preference or default to light mode
+const currentTheme = localStorage.getItem("theme") || "light"
+document.documentElement.setAttribute("data-theme", currentTheme)
+updateToggleIcon(currentTheme)
+
+themeToggle.addEventListener("click", () => {
+  const currentTheme = document.documentElement.getAttribute("data-theme")
+  const newTheme = currentTheme === "dark" ? "light" : "dark"
+
+  document.documentElement.setAttribute("data-theme", newTheme)
+  localStorage.setItem("theme", newTheme)
+  updateToggleIcon(newTheme)
+
+  // Add a subtle animation to indicate the change
+  themeToggle.style.transform = "scale(0.9)"
+  setTimeout(() => {
+    themeToggle.style.transform = "scale(1)"
+  }, 150)
+})
+
+function updateToggleIcon(theme) {
+  toggleIcon.textContent = theme === "dark" ? "☀️" : "🌙"
+  themeToggle.setAttribute("aria-label", `Switch to ${theme === "dark" ? "light" : "dark"} mode`)
+}
+
+// System theme preference detection
+if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches && !localStorage.getItem("theme")) {
+  document.documentElement.setAttribute("data-theme", "dark")
+  updateToggleIcon("dark")
+}
+
+// Listen for system theme changes
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+  if (!localStorage.getItem("theme")) {
+    const newTheme = e.matches ? "dark" : "light"
+    document.documentElement.setAttribute("data-theme", newTheme)
+    updateToggleIcon(newTheme)
+  }
+})
