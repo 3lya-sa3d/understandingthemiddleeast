@@ -680,7 +680,7 @@ themeToggle.addEventListener("click", () => {
 })
 
 function updateToggleIcon(theme) {
-  toggleIcon.textContent = theme === "dark" ? "☀️" : "🌙"
+  toggleIcon.textContent = theme === "dark" ? "☀︎" : "⏾"
   themeToggle.setAttribute("aria-label", `Switch to ${theme === "dark" ? "light" : "dark"} mode`)
 }
 
